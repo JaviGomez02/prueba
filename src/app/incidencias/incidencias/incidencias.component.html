@@ -1,0 +1,25 @@
+<h2>Lista de Incidencias</h2>
+
+<div class="text-right">
+  <a class="btn btn-primary" [routerLink]="['crear/crear']">Crear Incidencia</a>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let issue of issues">
+      <td>{{ issue.title }}</td>
+      <td>
+        <button class="btn btn-sm btn-primary" [routerLink]="[issue._id]">Ver incidencia</button>
+        <button class="btn btn-sm btn-primary" >Editar</button>
+        <button class="btn btn-sm btn-danger" (click)="borrarIncidencia(issue._id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,14 @@
+<h2>Crear incidencia</h2>
+
+<form (ngSubmit)="crearIncidencia()" [formGroup]="myForm">
+  <div class="form-group">
+    <label for="title">Título:</label>
+    <input type="text" class="form-control" formControlName="titulo" id="title" required>
+  </div>
+  <div class="form-group">
+    <label for="description">Descripción:</label>
+    <textarea class="form-control" id="description" formControlName="descripcion" rows="4"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar</button>
+  <button type="button" class="btn btn-secondary" (click)="volver()">Cancelar</button> <!-- Vuelve a la vista de listar incidencias -->
+</form>
